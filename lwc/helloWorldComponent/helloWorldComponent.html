@@ -1,0 +1,44 @@
+<template>
+    <lightning-card  title="Hello World"><!-- On VF its - {!variableName}-->
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">
+            {bodytext}<br/><br/>
+            {bodytextNew}<br/><br/>
+            {bodytextNewget}<br/><br/>
+            FROM APEX: {bodytextWire.data}
+
+            <template if:true={showDetails}>
+                <div class="slds-m-vertical_medium">
+                    To render HTML conditionally, add the if:true|false directive to a nested template tag that encloses the conditional content.
+                    The template contains a checkbox labeled Show details. When a user selects or deselects the checkbox, 
+                    the handleChange function sets the value of the areDetailsVisible property. 
+                    If the areDetailsVisible property is true, 
+                    the if:true directive renders the nested template, which displays These are the details!.
+                </div>
+            </template>
+
+            <template if:false={showDetails}>
+                <div class="slds-m-vertical_medium">
+                    Render DOM Elements Conditionally
+                </div>
+            </template>
+        </p>
+        <p slot="footer">
+            <lightning-button 
+                variant="brand" 
+                label="Show Details" 
+                title="This button Show the details." 
+                onclick={handleClick} 
+                class="slds-m-left_x-small"
+            ></lightning-button>
+
+            <lightning-checkbox-group 
+                name="Checkbox Group"
+                label="Checkbox Group"
+                options={options}
+                value={value}
+                onchange={handleChange}
+            ></lightning-checkbox-group>
+        </p>
+    </lightning-card>
+</template>

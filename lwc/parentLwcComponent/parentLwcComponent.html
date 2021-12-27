@@ -1,0 +1,29 @@
+<template>
+    <lightning-card  title="Parent Component">
+        <div class="slds-p-horizontal_small">
+            <c-child-lwc-component 
+                product-name={selectedProduct} 
+                image-src={selectedImage}
+                product-code={selectedproductcode}
+                onbuyselected={handleSeletedProduct}
+            ></c-child-lwc-component>
+
+            <!-- PAYMENT COMPONENT -->
+            <template if:true={showPayment}>
+                <c-payment-component
+                    product-name={selectedProduct}
+                    product-code={selectedproductcode}
+                ></c-payment-component>
+            </template>
+        </div>
+        <div slot="footer">
+            <lightning-button 
+                variant="brand" 
+                label="Next" 
+                title="Primary action" 
+                onclick={handleClick} 
+                class="slds-m-left_x-small"
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>
