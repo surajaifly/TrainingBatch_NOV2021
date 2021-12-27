@@ -1,0 +1,3 @@
+<aura:component >
+	<h1>CHILD CMP</h1>
+</aura:component>

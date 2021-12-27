@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<h1>HELLO WORLD</h1>
+    <c:MyFirstAuraChild></c:MyFirstAuraChild>
+</aura:component>
