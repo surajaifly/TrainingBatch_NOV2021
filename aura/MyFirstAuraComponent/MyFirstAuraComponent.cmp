@@ -1,4 +1,13 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
-	<h1>HELLO WORLD</h1>
-    <c:MyFirstAuraChild></c:MyFirstAuraChild>
+<aura:component 
+                implements="flexipage:availableForRecordHome,force:hasRecordId" 
+                access="global" 
+                controller="AuraApexController">
+	<aura:attribute name="parentVar" type="String" default="parent value"/>
+    <h1>HELLO WORLD- {!v.parentVar}</h1>
+    <lightning:button 
+                      label="Call Apex" 
+                      title="Call Apex" 
+                      onclick="{!c.myAction}"/>
+    
+    <c:MyFirstAuraChild childVar="{!v.parentVar}"></c:MyFirstAuraChild>
 </aura:component>
